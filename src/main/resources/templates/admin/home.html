@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Thymeleaf</title>
+</head>
+<body>
+Welcome: <p th:text="${userName}"/>
+Message: <p th:text = ${adminMessage}/>
+
+
+    <tr th:each="player: ${listPlayers}">
+        <td th:text="${player.id}">1</td>
+        <td><a href="#" th:text="${player.playerName}">Title ...</a></td>
+        <td th:text="${player.position}">Text ...</td>
+    </tr>
+
+<table>
+    <thead>
+    <tr>
+        <th> Id </th>
+        <th> Name </th>
+        <th> Age </th>
+        <th> Position </th>
+        <th> Value </th>
+        <th> nation </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${listPlayers.empty}">
+        <td colspan="2"> No Books Available </td>
+    </tr>
+    <tr th:each="player: ${listPlayers}">
+        <td><span th:text="${player.id}"> Id </span></td>
+        <td><span th:text="${player.playerName}"> Author </span></td>
+        <td><span th:text="${player.age}"> Title </span></td>
+        <td><span th:text="${player.position}"> Author </span></td>
+        <td><span th:text="${player.martketValue}"> Title </span></td>
+        <td><span th:text="${player.nationality}"> Author </span></td>
+    </tr>
+    </tbody>
+</table>
+<!--<div th:text="${userName}"></div>-->
+
+<!--<div th:text="${modelAndView.model}"></div>-->
+<!--<div th:text="${modelAndView.model.var1}"></div>-->
+</body>
+</html>
